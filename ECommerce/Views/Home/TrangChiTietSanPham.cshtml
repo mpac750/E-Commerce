@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewData["Title"] = "TrangChiTietSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--//////////////////////////////////////////////////-->
+<!--///////////////////TrangChiTietSanPham////////////-->
+<!--//////////////////////////////////////////////////-->
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Samsung galaxy Note</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div id="main-content" class="col-md-8">
+                <div class="product">
+                    <div class="col-md-6">
+                        <div class="image">
+                            <img src="~/User/images/galaxy-note.jpg" />
+                            <div class="image-more">
+                                <ul class="row">
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"><img class="img-responsive" src="~/User/images/galaxy-note.jpg"></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"><img class="img-responsive" src="~/User/images/galaxy-note-2.jpg"></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"><img class="img-responsive" src="~/User/images/galaxy-note-3.jpg"></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"><img class="img-responsive" src="~/User/images/galaxy-note-4.jpg"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="caption">
+                            <div class="name"><h3>Samsung Galaxy Note </h3></div>
+                            <div class="info">
+                                <ul>
+                                    <li>Thương hiệu: Samsung</li>
+                                    <li>ID: 0000001</li>
+                                </ul>
+                            </div>
+                            <div class="price">5,000,000đ<span>6,000,000đ</span></div>
+                            <div class="options">
+                                Lựa Chọn màu sắc
+                                <select>
+                                    <option value="" selected>Mời Chọn Màu</option>
+                                    <option value="red">Đỏ</option>
+                                    <option value="black">Đen</option>
+                                </select>
+                            </div>
+                            <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                            <div class="well"><label>Số Lượng: </label> <input class="form-inline quantity" type="text" value="1"><a href="#" class="btn btn-2 ">Thêm Vào Giỏ</a></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="product-desc">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#">Thông Tin Chi Tiết Sản Phẩm</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="description" class="tab-pane fade in active">
+                            <h4>Samsung Galaxy Note</h4>
+                            <p>
+                                Màn hình:	800 x 1280 pixels, 10.1 inches
+                                Hệ điều hành: Android
+                                Camera sau:	5 MP, 2592x1944 pixels, autofocus, LED flash
+                                Camera trước:	Có, 1.9 MP
+                                CPU:	Quad-core 1.4 GHz, Mali-400MP GPU
+                                Bộ nhớ trong:	16 GB, 2 GB RAM
+                                Thẻ nhớ:	microSD (TransFlash) hỗ trợ lên đến 64GB
+                                Dung lượng pin:	Li-Ion 7000 mAh
+                            </p>
+                            <img src="~/img/gsmarena_001.jpg"/>
+                            <p>
+                                Đội ngũ của Samsung tại Mỹ vừa công bố danh sách các thiết bị sẽ nhận bản cập nhật Android 4.4 KitKat trong thời gian tới. Đáng tiếc là trong những cái tên đó không có Galaxy S3, dù chiếc phablet ra mắt cùng năm với nó là Note 2 vẫn nằm trong danh sách. Lí do được đưa ra là vì S3 chỉ có 1GB RAM.
+                                Hàng triệu người dùng Galaxy S3 sẽ không khỏi thất vọng về điều này. Ảnh: GSMArena.
+                                Tuy nhiên, đó không phải là lí do chính. Trong số các thiết bị được cập nhật, Galaxy Grand dù chỉ có 1GB RAM nhưng vẫn được hỗ trợ. Ngoài ra, KitKat được Google tối ưu hóa để có thể chạy tốt trên các thiết bị có RAM từ 512MB trở lên.
+                                Thông tin khác cho biết, Galaxy S3 bản thị trường Mỹ với bộ nhớ RAM lên đến 2GB sẽ nhận được bản cập nhật KitKat 4.4.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar" class="col-md-4">
+                <div class="widget wid-categories">
+                    <div class="heading"><h4>Danh Mục</h4></div>
+                    <div class="content">
+                        <ul>
+                            <li><a href="#">PC Computers</a></li>
+                            <li><a href="#">Laptops & Notebooks</a></li>
+                            <li><a href="#">Mobiles & Tablet</a></li>
+                            <li><a href="#">Software</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget wid-discouts">
+                    <div class="heading"><h4>Theo Giá</h4></div>
+                    <div class="content">
+                        <label class="checkbox"><input type="checkbox" name="discount" checked="">Từ 1,000,000đ--->2,000,000đ</label>
+                        <label class="checkbox"><input type="checkbox" name="discount" checked="">Từ 2,000,000đ--->5,000,000đ</label>
+                        <label class="checkbox"><input type="checkbox" name="discount" checked="">Từ 5,000,000đ--->10,000,000đ</label>
+                        <label class="checkbox"><input type="checkbox" name="discount" checked="">Từ 10,000,000đ--->15,000,000đ</label>
+                        <label class="checkbox"><input type="checkbox" name="discount" checked="">Từ 15,000,000đ--->20,000,000đ</label>
+                    </div>
+                </div>
+                <div class="widget wid-brand">
+                    <div class="heading"><h4>Theo Thương Hiệu</h4></div>
+                    <div class="content">
+                        <label class="checkbox"><input type="checkbox" name="brand">Nokia</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Samsung</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Iphone</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">HTC</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Oppo</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Kings</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Zumba</label>
+                    </div>
+                </div>
+                <div class="widget wid-product">
+                    <div class="heading"><h4>Sản Phẩm Tương Tự</h4></div>
+                    <div class="content">
+                        <div class="product">
+                            <a href="#"><img src="~/User/images/galaxy-note.jpg" /></a>
+                            <div class="wrapper">
+                                <h5><a href="#">Samsung Galaxy Note 2</a></h5>
+                                <div class="price">6,000,000đ</div>
+                                <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="#"><img src="~/User/images/galaxy-s4.jpg" /></a>
+                            <div class="wrapper">
+                                <h5><a href="#">Samsung Galaxy S3</a></h5>
+                                <div class="price">5,000,000đ</div>
+                                <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="#"><img src="~/User/images/Z1.png" /></a>
+                            <div class="wrapper">
+                                <h5><a href="#">Sony Z</a></h5>
+                                <div class="price">8,000,000đ</div>
+                                <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -26,6 +26,18 @@ namespace ECommerce.Controllers
         {
             return View();
         }
+        public IActionResult TrangSanPham()
+        {
+            return View();
+        }
+        public IActionResult TrangChiTietSanPham()
+        {
+            return View();
+        }
+        public IActionResult TrangGioHang()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
