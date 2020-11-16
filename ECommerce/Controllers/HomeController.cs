@@ -22,7 +22,10 @@ namespace ECommerce.Controllers
         {
             return View();
         }
-
+        public IActionResult Test()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
