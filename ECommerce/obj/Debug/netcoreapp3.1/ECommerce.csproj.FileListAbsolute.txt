@@ -198,3 +198,12 @@ E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SanPhams\
 E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SanPhams\Details.cshtml.g.cs
 E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SanPhams\Edit.cshtml.g.cs
 E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SanPhams\Index.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\SanPhams\Index.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\SanPhams\Iphone.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\SanPhams\SamSung.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\SanPhams\Search.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\_Layout.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\_ValidationScriptsPartial.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\_ViewImports.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\_ViewStart.cshtml.g.cs
+E:\ECommerce\ECommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Users\Views\SanPhams\Details.cshtml.g.cs

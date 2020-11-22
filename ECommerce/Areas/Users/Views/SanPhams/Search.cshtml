@@ -1,0 +1,36 @@
+@model IEnumerable<ECommerce.Models.SanPham>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Users/Views/_Layout.cshtml";
+}
+
+<hr />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="heading"><h2>SPECIAL PRODUCTS</h2></div>
+
+        <div class="products">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="product">
+                        <div class="image">
+                            <a asp-controller="Detail" asp-action="Index" asp-route-id="@item.MaSP"
+                               asp-route-name="@item.TenSP"><img src="~/image/@item.HinhAnh" /></a>
+                        </div>
+                        <div class="buttons">
+                            <a class="btn cart" asp-controller="Cart" asp-action="Buy" asp-route-id="@item.MaSP"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        </div>
+                        <div class="caption">
+                            <div class="name"><h3>@item.TenSP</h3></div>
+                            <div class="price">@item.DonGia</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+        </div>
+

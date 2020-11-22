@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ECommerce</title>
+    <title>DaiPhatMonbile</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/User/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/User/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="~/User/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/User/fonts/font-slider.css" type="text/css">
+
+    <!-- jQuery and Modernizr-->
+    <script src="~/User/js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="~/User/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <ul class="top-link">
+                        <li><a href="#">So Sánh Sản Phẩm</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-8">
+                    <ul class="top-link">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Đăng Nhập</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Đăng Ký</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="logo"><img src="~/User/images/logodaiphatmobile.png" /></div>
+            </div>
+            @using (Html.BeginForm("Search", "Product", FormMethod.Get))
+            {
+            <div class="col-md-4">
+                 
+                       <form class="form-search">
+                             @Html.TextBox("search")
+                            <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+                    
+            </div>
+            }
+            <div class="col-md-4">
+                <div id="cart"><a class="btn btn-1" asp-controller="Cart"  asp-action="Null"><span class="glyphicon glyphicon-shopping-cart"></span>CART :  ITEM</a></div>
+            </div>
+        </div>
+                    
+        </div>
+                    
+    <!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PC Computers</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="category.html">Window</a></li>
+                                    <li><a href="category.html">MacBook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Laptops &amp; Notebooks</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="category.html">Dell</a></li>
+                                    <li><a href="category.html">Asus</a></li>
+                                    <li><a href="category.html">Samsung</a></li>
+                                    <li><a href="category.html">Lenovo</a></li>
+                                    <li><a href="category.html">Acer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mobiles &amp; Tablet</a>
+                        <div class="dropdown-menu" style="margin-left: -203.625px;">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="/product/iphone">Iphone</a></li>
+                                    <li><a href="/product/samsung">Samsung</a></li>
+                                    <li><a href="category.html">Nokia</a></li>
+                                    <li><a href="category.html">Lenovo</a></li>
+                                    <li><a href="category.html">Google</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="category.html">Nexus</a></li>
+                                    <li><a href="category.html">Dell</a></li>
+                                    <li><a href="category.html">Oppo</a></li>
+                                    <li><a href="category.html">Blackberry</a></li>
+                                    <li><a href="category.html">HTC</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="category.html">LG</a></li>
+                                    <li><a href="category.html">Q-Mobiles</a></li>
+                                    <li><a href="category.html">Sony</a></li>
+                                    <li><a href="category.html">Wiko</a></li>
+                                    <li><a href="category.html">T&T</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="category.html">Software</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--//////////////////////////////////////////////////-->
+    <!--///////////////////HomePage///////////////////////-->
+    <!--//////////////////////////////////////////////////-->
+
+    @RenderBody()
+
+
+  
+    </footer>
+    <!--footer-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
