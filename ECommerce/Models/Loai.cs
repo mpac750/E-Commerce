@@ -11,6 +11,6 @@ namespace ECommerce.Models
         [Key]
         public int MaLoai { get; set; }
         public string TenLoai { get; set; }
-        public List<Kho> Khos { get; set; }
+        public List<SanPham> sanPhams { get; set; }
     }
 }

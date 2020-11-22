@@ -191,51 +191,6 @@ namespace ECommerce.Migrations
                     b.ToTable("KhachHangs");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Kho", b =>
-                {
-                    b.Property<int>("MaSP")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("DonGiaNhap")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("LoaiMaLoai")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaLoai")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaNhaCC")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaTH")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("NhaCungCapMaNhaCC")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SoLuongNhap")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TenSP")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ThuongHieuMaTH")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("MaSP");
-
-                    b.HasIndex("LoaiMaLoai");
-
-                    b.HasIndex("NhaCungCapMaNhaCC");
-
-                    b.HasIndex("ThuongHieuMaTH");
-
-                    b.ToTable("Khos");
-                });
-
             modelBuilder.Entity("ECommerce.Models.KhuyenMai", b =>
                 {
                     b.Property<string>("MaKM")
@@ -352,7 +307,13 @@ namespace ECommerce.Migrations
                     b.Property<string>("HinhAnh")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("KhoMaSP")
+                    b.Property<int>("MaLoai")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaNhaCC")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaTH")
                         .HasColumnType("int");
 
                     b.Property<int>("SoLuong")
@@ -369,7 +330,11 @@ namespace ECommerce.Migrations
 
                     b.HasKey("MaSP");
 
-                    b.HasIndex("KhoMaSP");
+                    b.HasIndex("MaLoai");
+
+                    b.HasIndex("MaNhaCC");
+
+                    b.HasIndex("MaTH");
 
                     b.HasIndex("ChiTietDonHangMaDH", "ChiTietDonHangMaSP");
 
@@ -378,8 +343,10 @@ namespace ECommerce.Migrations
 
             modelBuilder.Entity("ECommerce.Models.ThuongHieu", b =>
                 {
-                    b.Property<string>("MaTH")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("MaTH")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Mota")
                         .HasColumnType("nvarchar(max)");
@@ -470,32 +437,25 @@ namespace ECommerce.Migrations
                     b.Navigation("NhanVien");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Kho", b =>
-                {
-                    b.HasOne("ECommerce.Models.Loai", "Loai")
-                        .WithMany("Khos")
-                        .HasForeignKey("LoaiMaLoai");
-
-                    b.HasOne("ECommerce.Models.NhaCungCap", "NhaCungCap")
-                        .WithMany("Khos")
-                        .HasForeignKey("NhaCungCapMaNhaCC");
-
-                    b.HasOne("ECommerce.Models.ThuongHieu", "ThuongHieu")
-                        .WithMany("Khos")
-                        .HasForeignKey("ThuongHieuMaTH");
-
-                    b.Navigation("Loai");
-
-                    b.Navigation("NhaCungCap");
-
-                    b.Navigation("ThuongHieu");
-                });
-
             modelBuilder.Entity("ECommerce.Models.SanPham", b =>
                 {
-                    b.HasOne("ECommerce.Models.Kho", "Kho")
-                        .WithMany("SanPhams")
-                        .HasForeignKey("KhoMaSP");
+                    b.HasOne("ECommerce.Models.Loai", "Loai")
+                        .WithMany("sanPhams")
+                        .HasForeignKey("MaLoai")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ECommerce.Models.NhaCungCap", "NhaCungCap")
+                        .WithMany("sanPhams")
+                        .HasForeignKey("MaNhaCC")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ECommerce.Models.ThuongHieu", "ThuongHieu")
+                        .WithMany("sanPhams")
+                        .HasForeignKey("MaTH")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ECommerce.Models.ChiTietDonHang", "ChiTietDonHang")
                         .WithMany("SanPhams")
@@ -503,7 +463,11 @@ namespace ECommerce.Migrations
 
                     b.Navigation("ChiTietDonHang");
 
-                    b.Navigation("Kho");
+                    b.Navigation("Loai");
+
+                    b.Navigation("NhaCungCap");
+
+                    b.Navigation("ThuongHieu");
                 });
 
             modelBuilder.Entity("ECommerce.Models.ChiTietDonHang", b =>
@@ -533,11 +497,6 @@ namespace ECommerce.Migrations
                     b.Navigation("HoaDons");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Kho", b =>
-                {
-                    b.Navigation("SanPhams");
-                });
-
             modelBuilder.Entity("ECommerce.Models.KhuyenMai", b =>
                 {
                     b.Navigation("DonHangs");
@@ -545,12 +504,12 @@ namespace ECommerce.Migrations
 
             modelBuilder.Entity("ECommerce.Models.Loai", b =>
                 {
-                    b.Navigation("Khos");
+                    b.Navigation("sanPhams");
                 });
 
             modelBuilder.Entity("ECommerce.Models.NhaCungCap", b =>
                 {
-                    b.Navigation("Khos");
+                    b.Navigation("sanPhams");
                 });
 
             modelBuilder.Entity("ECommerce.Models.NhanVien", b =>
@@ -560,7 +519,7 @@ namespace ECommerce.Migrations
 
             modelBuilder.Entity("ECommerce.Models.ThuongHieu", b =>
                 {
-                    b.Navigation("Khos");
+                    b.Navigation("sanPhams");
                 });
 #pragma warning restore 612, 618
         }

@@ -17,7 +17,7 @@ namespace ECommerce.Models
         public int SotienSP{ get; set; }
         public int TongTienDH { get; set; }
         public DonHang DonHang { get; set; }
-        public List<SanPham> SanPhams { get; set; }
+        public SanPham SanPhams { get; set; }
 
     }
 }

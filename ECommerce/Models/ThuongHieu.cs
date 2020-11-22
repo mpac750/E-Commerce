@@ -9,9 +9,9 @@ namespace ECommerce.Models
     public class ThuongHieu
     {
         [Key]
-        public string MaTH { get; set; }
+        public int MaTH { get; set; }
         public string TenTH { get; set; }
         public string Mota { get; set; }
-        public List<Kho> Khos { get; set; }
+        public List<SanPham> sanPhams { get; set; }
     }
 }

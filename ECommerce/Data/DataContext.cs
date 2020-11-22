@@ -23,7 +23,6 @@ namespace ECommerce.Data
         public DbSet<GiaoHang> GiaoHangs { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
-        public DbSet<Kho> Khos { get; set; }
         public DbSet<KhuyenMai> KhuyenMais { get; set; }
         public DbSet<Loai> Loais { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }

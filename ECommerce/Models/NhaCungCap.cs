@@ -14,7 +14,7 @@ namespace ECommerce.Models
         public string  DiaChi{ get; set; }
         public int MaSoThue { get; set; }
         public int Sdt { get; set; }
-        public List<Kho> Khos { get; set; }
+        public List<SanPham> sanPhams { get; set; }
 
     }
 }
