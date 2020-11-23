@@ -16,7 +16,9 @@ namespace ECommerce.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ChiTietDonHang>().HasKey(pk => new { pk.MaDH, pk.MaSP });
+            modelBuilder.Entity<ProductToCart>().HasNoKey();
         }
+        public DbSet<ProductToCart> productToCarts { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<ChiTietDonHang> ChiTietDonHangs{ get; set; }
         public DbSet<DonHang> DonHangs { get; set; }

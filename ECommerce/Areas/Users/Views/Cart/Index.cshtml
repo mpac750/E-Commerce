@@ -1,0 +1,47 @@
+
+@{
+    ViewData["Title"]="Cart";
+}
+
+<div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
+                    <li><a asp-action="Index" asp-controller="Cart"></a>Gio hàng</li>
+                </ul>
+            </div>
+ </div>
+ 
+ <div class="row">Tong sp: @ViewBag.totalItem</a> </div>
+<table class="table-bordered table">
+    <tr>
+       
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+        <th>Option</th>
+    </tr>
+    @foreach (var item in ViewBag.Cart)
+    {
+        <tr>
+            <td>@item.SanPham.TenSP</td>
+            <td><img src="~/image/@item.SanPham.HinhAnh" width="60" height="60"></td>
+            <td>@item.SanPham.DonGia</td>
+            <td>@item.Quantity</td>
+            <td>@(item.SanPham.DonGia* item.Quantity)</td>
+            <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.SanPham.MaSP">Remove</a></td>
+        </tr>
+        
+    }
+  
+    <tr>
+        <td align = "right" colspan="6">Sum</td>
+        <td>
+            @ViewBag.total
+        </td>
+    </tr>
+</table>
+<br>
+<a asp-controller="Product" asp-action="Index">Continue Shopping</a>

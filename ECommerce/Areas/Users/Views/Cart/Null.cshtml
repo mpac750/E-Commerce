@@ -1,0 +1,18 @@
+
+@{
+    ViewData["Title"]="Cart";
+}
+
+<div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
+                    <li><a asp-action="Index" asp-controller="Cart"></a>Giỏ hàng</li>
+                </ul>
+            </div>
+ </div>
+<table class="table-bordered table">
+   <h1>Giỏ hàng trống</h1>
+   <a asp-action="Index" asp-controller="SanPham">Quay lại trang chủ mua hàng</a>
+</table>
+<br>
