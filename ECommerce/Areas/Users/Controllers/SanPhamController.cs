@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore;
 namespace ECommerce.Areas.Users.Controllers
 {
     [Area("Users")]
-    public class SanPhamsController : Controller
+    public class SanPhamController : Controller
     {
         private readonly DataContext _context;
-        public SanPhamsController(DataContext context)
+        public SanPhamController(DataContext context)
         {
             _context = context;
         }
