@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IT\\Study\\TMDT\\ECommerce\\ECommerce.csproj": {}
+    "C:\\Users\\CAKE\\Downloads\\ustora\\E-Commerce\\ECommerce\\ECommerce.csproj": {}
   },
   "projects": {
-    "D:\\IT\\Study\\TMDT\\ECommerce\\ECommerce.csproj": {
+    "C:\\Users\\CAKE\\Downloads\\ustora\\E-Commerce\\ECommerce\\ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT\\Study\\TMDT\\ECommerce\\ECommerce.csproj",
+        "projectUniqueName": "C:\\Users\\CAKE\\Downloads\\ustora\\E-Commerce\\ECommerce\\ECommerce.csproj",
         "projectName": "ECommerce",
-        "projectPath": "D:\\IT\\Study\\TMDT\\ECommerce\\ECommerce.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\IT\\Study\\TMDT\\ECommerce\\obj\\",
+        "projectPath": "C:\\Users\\CAKE\\Downloads\\ustora\\E-Commerce\\ECommerce\\ECommerce.csproj",
+        "packagesPath": "C:\\Users\\CAKE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CAKE\\Downloads\\ustora\\E-Commerce\\ECommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CAKE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
