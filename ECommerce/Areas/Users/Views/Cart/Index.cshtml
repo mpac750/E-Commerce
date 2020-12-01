@@ -1,47 +1,58 @@
-
-@{
-    ViewData["Title"]="Cart";
-}
+@model List<ECommerce.Data.ProductToCart>
+@{ ViewData["Title"] = "Cart";
+    Layout = "~/Areas/Users/Views/_Layout.cshtml"; }
 
 <div class="row">
-            <div class="col-lg-12">
-                <ul class="breadcrumb">
-                    <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
-                    <li><a asp-action="Index" asp-controller="Cart"></a>Gio hàng</li>
-                </ul>
-            </div>
- </div>
- 
- <div class="row">Tong sp: @ViewBag.totalItem</a> </div>
-<table class="table-bordered table">
+    <div class="col-lg-12">
+        <ul class="breadcrumb">
+            <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
+            <li><a asp-action="Index" asp-controller="Cart"></a>Gio hàng</li>
+        </ul>
+    </div>
+</div>
+@if (ViewBag.Cart.Count > 0)
+{
+    decimal total = 0;
+<div class="row">
+    Tong sp: @ViewBag.Cart.Count
+</div>
+                <table class="table-bordered table">
+                    <tr>
+
+                        <th>Name</th>
+                        <th>Photo</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sub Total</th>
+                        <th>Option</th>
+                    </tr>
+                    @foreach (var item in ViewBag.Cart)
+                    {
+                        var thanhtien = item.Quantity * item.SanPham.DonGia;
+                        total += thanhtien;
     <tr>
-       
-        <th>Name</th>
-        <th>Photo</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Sub Total</th>
-        <th>Option</th>
+        <td>@item.SanPham.TenSP</td>
+        <td><img src="~/image/@item.SanPham.HinhAnh" width="60" height="60"></td>
+        <td>@item.SanPham.DonGia</td>
+        <td>@item.Quantity</td>
+        <td>@(item.SanPham.DonGia * item.Quantity)</td>
+        <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.SanPham.MaSP">Remove</a></td>
     </tr>
-    @foreach (var item in ViewBag.Cart)
-    {
-        <tr>
-            <td>@item.SanPham.TenSP</td>
-            <td><img src="~/image/@item.SanPham.HinhAnh" width="60" height="60"></td>
-            <td>@item.SanPham.DonGia</td>
-            <td>@item.Quantity</td>
-            <td>@(item.SanPham.DonGia* item.Quantity)</td>
-            <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.SanPham.MaSP">Remove</a></td>
-        </tr>
-        
-    }
-  
-    <tr>
-        <td align = "right" colspan="6">Sum</td>
-        <td>
-            @ViewBag.total
-        </td>
-    </tr>
-</table>
+}
+
+                    <tr>
+                        <td align="right" colspan="6">Sum</td>
+                        <td>
+                            total
+                        </td>
+                    </tr>
+                </table>
+                                <a asp-controller="Cart" asp-action="Checkout" class="btn btn-success">Thanh toán</a> }
+                                            else
+                                            {
+                                                <p class="alert alert-danger">Giỏ hàng trống</p>
+                                            }
+
+
 <br>
 <a asp-controller="SanPham" asp-action="Index">Continue Shopping</a>

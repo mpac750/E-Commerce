@@ -40,6 +40,7 @@ namespace ECommerce.Models
         public ThuongHieu ThuongHieu { get; set; }
         [Display(Name = "Nhà cung cấp")]
         public NhaCungCap NhaCungCap { get; set; }
+        public ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
 
     }
 }

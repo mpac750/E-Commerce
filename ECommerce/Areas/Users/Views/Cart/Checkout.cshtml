@@ -1,0 +1,82 @@
+﻿@model List<ECommerce.Data.ProductToCart>
+@{ ViewData["Title"] = "Cart";
+    Layout = "~/Areas/Users/Views/_Layout.cshtml"; }
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul class="breadcrumb">
+            <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
+            <li><a asp-action="Index" asp-controller="Cart"></a>Gio hàng</li>
+        </ul>
+    </div>
+</div>
+@if (ViewBag.Cart.Count > 0)
+{
+    decimal total = 0;
+<div class="row">
+    Tong sp: @ViewBag.Cart.Count
+</div>
+                <table class="table-bordered table">
+                    <tr>
+
+                        <th>Name</th>
+                        <th>Photo</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sub Total</th>
+                    </tr>
+                    @foreach (var item in ViewBag.Cart)
+                    {
+                        var thanhtien = item.Quantity * item.SanPham.DonGia;
+                        total += thanhtien;
+    <tr>
+        <td>@item.SanPham.TenSP</td>
+        <td><img src="~/image/@item.SanPham.HinhAnh" width="60" height="60"></td>
+        <td>@item.SanPham.DonGia</td>
+        <td>@item.Quantity</td>
+        <td>@(item.SanPham.DonGia * item.Quantity)</td>
+        
+    </tr>
+}
+                    <tr>
+                        <td align="right" colspan="6">Sum</td>
+                        <td>
+                            @(total.ToString("n0"))
+                        </td>
+                    </tr>
+                </table>
+<div class="section group">
+        <div class="col-md-6">
+            @using (Html.BeginForm("Checkout", "Cart", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Người nhận</label>
+                    <input name="shipName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Điện thoại</label>
+                    <input name="mobile" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input name="address" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Ghi chu</label>
+                    <input name="ghichu" class="form-control" />
+                </div>
+                
+                <button type="submit" class="btn">Xac nhan</button>
+            }
+        </div>
+       
+    </div>
+}
+ else
+ {
+    <p class="alert alert-danger">Giỏ hàng trống</p>
+ }

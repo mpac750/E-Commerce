@@ -1,0 +1,13 @@
+﻿@model List<ECommerce.Data.ProductToCart>
+@{ ViewData["Title"] = "Cart";
+    Layout = "~/Areas/Users/Views/_Layout.cshtml"; }
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul class="breadcrumb">
+            <li><a asp-action="Index" asp-controller="Product">Trang Chủ</a></li>
+            <li><a asp-action="Index" asp-controller="Cart"></a>Gio hàng</li>
+        </ul>
+    </div>
+</div>
+<h1>Dat hang thanh cong</h1>

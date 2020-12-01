@@ -13,11 +13,10 @@ namespace ECommerce.Models
         public int MaDH { get; set; }
         [Key, Column(Order = 1)]
         public int MaSP { get; set; }
-        public int SoLuongSP{ get; set; }
-        public int SotienSP{ get; set; }
+        public int SoLuongSP { get; set; }
+        public int SotienSP { get; set; }
         public int TongTienDH { get; set; }
         public DonHang DonHang { get; set; }
-        public SanPham SanPhams { get; set; }
-
+        public ICollection<SanPham> SanPhams { get; set; }
     }
 }

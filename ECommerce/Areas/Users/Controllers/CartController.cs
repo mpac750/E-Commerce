@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MailKit.Net.Smtp;
 using System.Threading.Tasks;
 using ECommerce.Areas.Users.Helper;
 using ECommerce.Data;
+using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 
 namespace ECommerce.Areas.Users.Controllers
 {
@@ -88,6 +91,38 @@ namespace ECommerce.Areas.Users.Controllers
                 }
             }
             return -1;
+        }
+        [HttpPost]
+        public IActionResult Checkout(string shipName, string mobile, string address, string email, string ghichu)
+        {
+            var order = new DonHang();
+            order.NgayTaoDH = DateTime.Now;
+            order.DiaChiNhan = address;
+            order.SoDienThoai = mobile;
+            order.TenKH = shipName;
+            order.Email = email;
+            order.GhiChuDH = ghichu;
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("alicet8436.01@gmail.com"));
+            message.To.Add(new MailboxAddress(email));
+            message.Subject = "Dat hang thanh cong";
+            message.Body = new TextPart("plain")
+            {
+                Text = "Dat hang thanh cong" + "---------------" + shipName + "- " + address + "-"
+            };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("alicet8436.01@gmail.com", "Bunnyneit8436");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+            return Redirect("/Users/Cart/Success");
+        }
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
