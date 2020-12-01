@@ -92,6 +92,12 @@ namespace ECommerce.Areas.Users.Controllers
             }
             return -1;
         }
+        public IActionResult Checkout()
+        {
+            var cart = SessionHelper.GetObjectFromJson<List<ProductToCart>>(HttpContext.Session, "cart");
+            ViewBag.cart = cart;
+            return View();
+        }
         [HttpPost]
         public IActionResult Checkout(string shipName, string mobile, string address, string email, string ghichu)
         {
